@@ -68,11 +68,19 @@ namespace Ejercicio1
             #region Promedio y resultados
             double promedio = (double)suma / cant;
 
-            Console.WriteLine($"La suma de los elementos ingresados es: {suma}");
-            Console.WriteLine($"El promedio de los elementos ingresados es: {promedio}");
-            Console.WriteLine($"El mayor elemento es: {mayor} en la posición (subindice) {posMayor}");
-            Console.WriteLine($"El menor elemento es: {menor} en la posición (subindice) {posMenor}");
-            #endregion
+            if (cant <= 0)
+            {
+                Console.WriteLine("No se ingresaron números.");
+                return; // Salimos del programa si no hay números
+            }
+            else
+            {
+                Console.WriteLine($"La suma de los elementos ingresados es: {suma}");
+                Console.WriteLine($"El promedio de los elementos ingresados es: {promedio}");
+                Console.WriteLine($"El mayor elemento es: {mayor} en la posición (subindice) {posMayor}");
+                Console.WriteLine($"El menor elemento es: {menor} en la posición (subindice) {posMenor}");
+            }
+                #endregion
         }
     }
 }
