@@ -31,13 +31,15 @@ namespace Ejercicio1._2
                     Si la entrada es un numero, se guardara, sino, no*/
                 {
                     if (libreta == -1)
-                        break;
+                        break; // Si ingreso -1, se sale del bucle
 
                     libretas[cantidad] = libreta;
                     Console.Write("Ingrese el nombre del alumno: ");
                     nombres[cantidad] = Console.ReadLine();
+
                     Console.Write("Ingrese la nota del alumno: ");
                     string notaEntrada = Console.ReadLine();
+
                     if (double.TryParse(notaEntrada, out double nota)) // Convertir la entrada a un número decimal
                     {
                         notas[cantidad] = nota;
@@ -72,7 +74,7 @@ namespace Ejercicio1._2
 
             double notaMayor = notas[0];
             double notaMenor = notas[0];
-            int posMayor = 0, posMenor = 0;
+            int posMayor = -1, posMenor = 10000; //Esto lo hago para que siempre entre en el if de abajo
             for (int i = 1; i < cantidad; i++)
             {
                 if (notas[i] > notaMayor)
